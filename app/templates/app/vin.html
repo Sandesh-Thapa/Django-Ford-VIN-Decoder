@@ -1,0 +1,51 @@
+{% extends 'app/base.html' %}
+{% block content %}
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+              Vehicle Details
+            </div>
+            <div class="card-body">
+                <table class="table table-striped table-hover">
+                    <tbody>
+                        <tr>
+                          <td>Serial Number</td>
+                          <td>{{ data.serial_number }}</td>
+                        </tr>
+                        <tr>
+                          <td>Model Name</td>
+                          <td>{{ data.model }}</td>
+                        </tr>
+                        <tr>
+                          <td>Model Year</td>
+                          <td>{{ data.model_year }}</td>
+                        </tr>
+                        <tr>
+                          <td>Built Region</td>
+                          <td>{{ data.region }}</td>
+                        </tr>
+                        <tr>
+                          <td>Assembly Plant</td>
+                          <td>{{ data.assembly_plant }}</td>
+                        </tr>
+                        <tr>
+                          <td>Security System</td>
+                          <td>{{ data.security_system }}</td>
+                        </tr>
+                        <tr>
+                          <td>World Manufacturer Identifier</td>
+                          <td>
+                            {% for d in data.wmi %}
+                              {{ d }} &nbsp; &nbsp;
+                            {% endfor %}
+                          </td>
+                        </tr>
+                    </tbody>
+                </table>
+              <a href="/" class="btn btn-primary">Go Back</a>
+            </div>
+          </div>
+    </div>
+{% endblock %}
+
+   
